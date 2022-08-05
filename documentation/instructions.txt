@@ -1,0 +1,17 @@
+Para la base datos ejecutar el comando
+	docker exec -it docker_postgres_1 psql -U root -d prueba_meli -f /scrit.sql
+
+Para uploadfile ejecutar el comando
+	docker run -d -p 4000:4000 --name uploadfile
+copiar la ruta del la carpeta de los archivos o del archivo para cargar la información
+
+Para apirest ejecutar el comando
+	docker run -d -p 5000:5000 --name python-restapi flask-restapi
+Tienes dos consulta
+1. palabras por archivos 
+		parametros: file -> nombre del archivo
+					word -> palabra a buscar
+		Se ejecuta localhost:5000/word/file/word
+2. Palabra con frecuencia en todos los archivos
+		Parametro: word -> palabra a buscar
+		Se ejecuta localhost:5000/word
